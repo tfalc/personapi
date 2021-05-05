@@ -17,9 +17,8 @@ import java.util.stream.Collectors;
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonService {
 
-    private PersonRepository personRepository;
-
     private final PersonMapper personMapper = PersonMapper.INSTANCE;
+    private final PersonRepository personRepository;
 
     public MessageResponseDTO createPerson(PersonDTO personDTO) {
         Person personToSave = personMapper.toModel(personDTO);
